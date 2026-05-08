@@ -2,6 +2,8 @@
 
 A clean, elegant RSS feed reader widget for KDE Plasma 5 desktop.
 
+[中文说明](README_zh.md)
+
 ![](screenshot.png)
 
 ## Features
@@ -17,13 +19,8 @@ A clean, elegant RSS feed reader widget for KDE Plasma 5 desktop.
 ## Install
 
 ```bash
+cd rss-widge
 ./install.sh
-```
-
-Or manually:
-
-```bash
-plasmapkg2 -i /path/to/rss-widge
 ```
 
 Then right-click the desktop → **Add Widget** → search **"RSS Reader"**.
@@ -31,7 +28,8 @@ Then right-click the desktop → **Add Widget** → search **"RSS Reader"**.
 ## Update
 
 ```bash
-plasmapkg2 -u /path/to/rss-widge
+cd rss-widge
+./install.sh
 ```
 
 ## Remove
@@ -43,7 +41,7 @@ plasmapkg2 -r org.kde.plasma.rssreader
 ## Debug
 
 ```bash
-# Test in standalone window (no Plasma shell needed)
+cd rss-widge
 plasmawindowed org.kde.plasma.rssreader
 
 # Watch logs
