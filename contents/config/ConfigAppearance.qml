@@ -1,6 +1,5 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.0
-
 import org.kde.kirigami 2.3 as Kirigami
 
 Kirigami.FormLayout {
@@ -14,7 +13,7 @@ Kirigami.FormLayout {
         from: 0.2
         to: 1.0
         stepSize: 0.05
-        Kirigami.FormData.label: i18n("Background opacity: %1%", Math.round(bgOpacitySlider.value * 100))
+        Kirigami.FormData.label: i18n("Background opacity:") + " " + Math.round(bgOpacitySlider.value * 100) + "%"
     }
 
     TextField {
@@ -25,8 +24,8 @@ Kirigami.FormLayout {
 
     TextField {
         id: textColorField
-        Kirigami.FormData.label: i18n("Text color:")
-        placeholderText: i18n("(system theme)")
+        Kirigami.FormData.label: i18n("Text color (empty=system):")
+        placeholderText: ""
     }
 
     SpinBox {

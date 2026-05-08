@@ -1,6 +1,5 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.0
-
 import org.kde.kirigami 2.3 as Kirigami
 
 Kirigami.FormLayout {
@@ -27,15 +26,14 @@ Kirigami.FormLayout {
         id: displayModeSpin
         from: 0
         to: 2
-        Kirigami.FormData.label: i18n("Content display: 0=Title+Content 1=Title Only 2=First N")
+        Kirigami.FormData.label: i18n("Content display: 0=Full, 1=Title, 2=Mixed")
     }
 
     SpinBox {
         id: contentItemsSpin
         from: 1
         to: 20
-        enabled: displayModeSpin.value === 2
-        Kirigami.FormData.label: i18n("Items with content:")
+        Kirigami.FormData.label: i18n("Items with content (mode 2):")
     }
 
     SpinBox {

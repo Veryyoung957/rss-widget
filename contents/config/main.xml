@@ -6,37 +6,37 @@
   <kcfgfile name=""/>
 
   <group name="General">
-    <entry name="feedUrl" type="String">
+    <entry name="feedUrl" type="string">
       <default></default>
     </entry>
-    <entry name="refreshInterval" type="Int">
+    <entry name="refreshInterval" type="int">
       <default>30</default>
     </entry>
-    <entry name="maxItems" type="Int">
+    <entry name="maxItems" type="int">
       <default>20</default>
     </entry>
-    <entry name="widgetTitle" type="String">
+    <entry name="widgetTitle" type="string">
       <default>RSS Reader</default>
     </entry>
-    <entry name="displayMode" type="Int">
+    <entry name="displayMode" type="int">
       <default>0</default>
     </entry>
-    <entry name="contentItemsCount" type="Int">
+    <entry name="contentItemsCount" type="int">
       <default>3</default>
     </entry>
   </group>
 
   <group name="Appearance">
-    <entry name="bgOpacity" type="Double">
+    <entry name="bgOpacity" type="double">
       <default>0.85</default>
     </entry>
-    <entry name="fontSize" type="Int">
+    <entry name="fontSize" type="int">
       <default>13</default>
     </entry>
-    <entry name="bgColor" type="String">
+    <entry name="bgColor" type="string">
       <default>#ffffff</default>
     </entry>
-    <entry name="textColor" type="String">
+    <entry name="textColor" type="string">
       <default></default>
     </entry>
   </group>
