@@ -1,8 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.5
-import QtQuick.Layouts 1.0
 
-import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kirigami 2.3 as Kirigami
 
 Kirigami.FormLayout {
@@ -12,7 +10,7 @@ Kirigami.FormLayout {
     property alias cfg_textColor: textColorField.text
 
     function previewColor(hexStr, fallback) {
-        var s = hexStr.trim();
+        var s = (hexStr || "").trim();
         if (/^#[0-9A-Fa-f]{6}$/.test(s)) return s;
         return fallback;
     }
@@ -25,42 +23,16 @@ Kirigami.FormLayout {
         Kirigami.FormData.label: i18n("Background opacity: %1%", Math.round(bgOpacitySlider.value * 100))
     }
 
-    RowLayout {
+    TextField {
+        id: bgColorField
         Kirigami.FormData.label: i18n("Background color:")
-        spacing: 4
-
-        TextField {
-            id: bgColorField
-            Layout.fillWidth: true
-            placeholderText: "#ffffff"
-        }
-
-        Rectangle {
-            width: 24
-            height: 24
-            radius: 3
-            color: previewColor(bgColorField.text, "#ffffff")
-            border.color: Qt.rgba(0, 0, 0, 0.2)
-        }
+        placeholderText: "#ffffff"
     }
 
-    RowLayout {
+    TextField {
+        id: textColorField
         Kirigami.FormData.label: i18n("Text color:")
-        spacing: 4
-
-        TextField {
-            id: textColorField
-            Layout.fillWidth: true
-            placeholderText: i18n("(system default)")
-        }
-
-        Rectangle {
-            width: 24
-            height: 24
-            radius: 3
-            color: textColorField.text.trim() !== "" ? previewColor(textColorField.text, "#000000") : PlasmaCore.Theme.textColor
-            border.color: Qt.rgba(0, 0, 0, 0.2)
-        }
+        placeholderText: i18n("(system theme)")
     }
 
     SpinBox {
