@@ -19,6 +19,7 @@ Item {
     property int contentItemsCount: 3
     property string bgColor: "#ffffff"
     property string textColor: ""
+    property string fontFamily: ""
 
     signal doRefresh()
 
@@ -70,6 +71,7 @@ Item {
                     text: widgetTitle
                     font.pointSize: textSize + 2
                     font.bold: true
+                    font.family: fontFamily !== "" ? fontFamily : PlasmaCore.Theme.defaultFont.family
                     Layout.fillWidth: true
                     color: textColor !== "" ? textColor : PlasmaCore.Theme.textColor
                 }
@@ -100,6 +102,7 @@ Item {
                     visible: full.status === 0
                     text: i18n("Configure an RSS feed URL\nin widget settings")
                     font.pointSize: textSize
+                    font.family: fontFamily !== "" ? fontFamily : PlasmaCore.Theme.defaultFont.family
                     horizontalAlignment: Text.AlignHCenter
                     color: textColor !== "" ? textColor : PlasmaCore.Theme.disabledTextColor
                     wrapMode: Text.WordWrap
@@ -132,6 +135,7 @@ Item {
                         text: full.errorMsg || i18n("Failed to load feed")
                         font.pointSize: textSize
                         font.bold: true
+                        font.family: fontFamily !== "" ? fontFamily : PlasmaCore.Theme.defaultFont.family
                         horizontalAlignment: Text.AlignHCenter
                         wrapMode: Text.WordWrap
                         width: parent.width
@@ -159,6 +163,7 @@ Item {
                         contentItemsCount: full.contentItemsCount
                         modelIndex: index
                         textColor: full.textColor
+                        fontFamily: full.fontFamily
                     }
                 }
             }

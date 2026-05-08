@@ -39,6 +39,9 @@
     <entry name="textColor" type="string">
       <default></default>
     </entry>
+    <entry name="fontFamily" type="string">
+      <default></default>
+    </entry>
   </group>
 
 </kcfg>

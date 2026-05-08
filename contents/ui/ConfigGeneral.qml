@@ -24,23 +24,47 @@ Kirigami.FormLayout {
 
     SpinBox {
         id: displayModeSpin
+        visible: false
         from: 0
         to: 2
-        Kirigami.FormData.label: i18n("Content display: 0=Full, 1=Title, 2=Mixed")
+    }
+
+    Item {
+        Kirigami.FormData.label: i18n("Content display:")
+        implicitHeight: radioColumn.implicitHeight
+        Column {
+            id: radioColumn
+            spacing: 4
+            RadioButton {
+                text: i18n("Full - Show title, description and date for all articles")
+                checked: displayModeSpin.value === 0
+                onClicked: displayModeSpin.value = 0
+            }
+            RadioButton {
+                text: i18n("Title Only - Show only article titles")
+                checked: displayModeSpin.value === 1
+                onClicked: displayModeSpin.value = 1
+            }
+            RadioButton {
+                text: i18n("Mixed - Show title for all, full content for first N items")
+                checked: displayModeSpin.value === 2
+                onClicked: displayModeSpin.value = 2
+            }
+        }
     }
 
     SpinBox {
         id: contentItemsSpin
         from: 1
         to: 20
-        Kirigami.FormData.label: i18n("Items with content (mode 2):")
+        Kirigami.FormData.label: i18n("Items with content (Mixed mode):")
     }
 
     SpinBox {
         id: refreshIntervalSpin
         from: 5
         to: 1440
-        Kirigami.FormData.label: i18n("Refresh interval (min):")
+        Kirigami.FormData.label: i18n("Refresh interval (minutes):")
     }
 
     SpinBox {

@@ -11,6 +11,7 @@ Item {
     property int contentItemsCount: 3
     property int modelIndex: 0
     property string textColor: ""
+    property string fontFamily: ""
 
     width: ListView.view.width
     implicitHeight: contentLayout.implicitHeight + PlasmaCore.Units.smallSpacing * 2
@@ -49,6 +50,7 @@ Item {
                 text: model.title || i18n("(No title)")
                 font.pointSize: PlasmaCore.Theme.defaultFont.pointSize
                 font.bold: true
+                font.family: fontFamily !== "" ? fontFamily : PlasmaCore.Theme.defaultFont.family
                 elide: Text.ElideRight
                 maximumLineCount: 2
                 wrapMode: Text.WordWrap
@@ -72,6 +74,7 @@ Item {
                     return txt.trim();
                 }
                 font.pointSize: PlasmaCore.Theme.smallestFont.pointSize
+                font.family: fontFamily !== "" ? fontFamily : PlasmaCore.Theme.defaultFont.family
                 color: textColor !== "" ? textColor : PlasmaCore.Theme.disabledTextColor
                 elide: Text.ElideRight
                 maximumLineCount: 2
@@ -97,6 +100,7 @@ Item {
                     return d;
                 }
                 font.pointSize: PlasmaCore.Theme.smallestFont.pointSize
+                font.family: fontFamily !== "" ? fontFamily : PlasmaCore.Theme.defaultFont.family
                 color: textColor !== "" ? textColor : PlasmaCore.Theme.disabledTextColor
             }
         }

@@ -33,14 +33,14 @@ cd rss-widge
 ## 卸载
 
 ```bash
-plasmapkg2 -r org.kde.plasma.rssreader
+plasmapkg2 -r .
 ```
 
 ## 调试
 
 ```bash
 cd rss-widge
-plasmawindowed org.kde.plasma.rssreader
+plasmawindowed .
 
 # 查看日志
 journalctl --user -f | grep -i rss

@@ -24,6 +24,7 @@ Item {
     readonly property int contentItemsCount: plasmoid.configuration ? plasmoid.configuration.contentItemsCount : 3
     readonly property string bgColor: plasmoid.configuration ? (plasmoid.configuration.bgColor || "#ffffff") : "#ffffff"
     readonly property string textColor: plasmoid.configuration ? (plasmoid.configuration.textColor || "") : ""
+    readonly property string fontFamily: plasmoid.configuration ? (plasmoid.configuration.fontFamily || "") : ""
 
     property int feedStatus: 0 // 0=unconfigured, 1=loading, 2=loaded, 3=error
     property string errorText: ""
@@ -82,6 +83,7 @@ Item {
         contentItemsCount: root.contentItemsCount
         bgColor: root.bgColor
         textColor: root.textColor
+        fontFamily: root.fontFamily
         onDoRefresh: root.refresh()
     }
 }
