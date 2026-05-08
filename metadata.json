@@ -1,0 +1,26 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "veryyoung957"
+            }
+        ],
+        "Category": "Online Services",
+        "Description": "Subscribe to RSS feeds and read articles in a clean, elegant card",
+        "Description[zh_CN]": "订阅 RSS 源并以简约优雅的卡片展示文章",
+        "EnabledByDefault": true,
+        "Icon": "rss",
+        "Id": "org.kde.plasma.rssreader",
+        "License": "GPL-2.0+",
+        "Name": "RSS Reader",
+        "Name[zh_CN]": "RSS 阅读器",
+        "ServiceTypes": [
+            "Plasma/Applet"
+        ],
+        "Version": "1.0",
+        "Website": "https://github.com/veryyoung957/rss-widge"
+    },
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-MainScript": "ui/main.qml",
+    "X-Plasma-StandAloneApp": true
+}
