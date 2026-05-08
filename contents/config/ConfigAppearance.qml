@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import QtQuick.Controls 2.5
+import QtQuick.Controls 2.0
 
 import org.kde.kirigami 2.3 as Kirigami
 
@@ -8,12 +8,6 @@ Kirigami.FormLayout {
     property alias cfg_fontSize: fontSizeSpin.value
     property alias cfg_bgColor: bgColorField.text
     property alias cfg_textColor: textColorField.text
-
-    function previewColor(hexStr, fallback) {
-        var s = (hexStr || "").trim();
-        if (/^#[0-9A-Fa-f]{6}$/.test(s)) return s;
-        return fallback;
-    }
 
     Slider {
         id: bgOpacitySlider

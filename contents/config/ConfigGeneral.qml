@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import QtQuick.Controls 2.5
+import QtQuick.Controls 2.0
 
 import org.kde.kirigami 2.3 as Kirigami
 
@@ -8,7 +8,7 @@ Kirigami.FormLayout {
     property alias cfg_refreshInterval: refreshIntervalSpin.value
     property alias cfg_maxItems: maxItemsSpin.value
     property alias cfg_widgetTitle: widgetTitleField.text
-    property alias cfg_displayMode: displayModeCombo.currentIndex
+    property alias cfg_displayMode: displayModeSpin.value
     property alias cfg_contentItemsCount: contentItemsSpin.value
 
     TextField {
@@ -23,17 +23,18 @@ Kirigami.FormLayout {
         placeholderText: i18n("RSS Reader")
     }
 
-    ComboBox {
-        id: displayModeCombo
-        Kirigami.FormData.label: i18n("Content display:")
-        model: [i18n("Title + Content"), i18n("Title Only"), i18n("First N items with content")]
+    SpinBox {
+        id: displayModeSpin
+        from: 0
+        to: 2
+        Kirigami.FormData.label: i18n("Content display: 0=Title+Content 1=Title Only 2=First N")
     }
 
     SpinBox {
         id: contentItemsSpin
         from: 1
         to: 20
-        enabled: displayModeCombo.currentIndex === 2
+        enabled: displayModeSpin.value === 2
         Kirigami.FormData.label: i18n("Items with content:")
     }
 
