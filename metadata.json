@@ -18,7 +18,7 @@
             "Plasma/Applet"
         ],
         "Version": "1.0",
-        "Website": "https://github.com/veryyoung957/rss-widge"
+        "Website": "https://github.com/veryyoung957/rss-widget"
     },
     "X-Plasma-API": "declarativeappletscript",
     "X-Plasma-MainScript": "ui/main.qml",
